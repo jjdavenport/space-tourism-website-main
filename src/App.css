@@ -570,10 +570,6 @@ video {
   right: 0px;
 }
 
-.top-0{
-  top: 0px;
-}
-
 .z-10{
   z-index: 10;
 }
@@ -590,10 +586,6 @@ video {
   display: flex;
 }
 
-.hidden{
-  display: none;
-}
-
 .h-1{
   height: 0.25rem;
 }
@@ -604,10 +596,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-6{
-  height: 1.5rem;
 }
 
 .min-h-60{
@@ -624,10 +612,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-6{
-  width: 1.5rem;
 }
 
 .min-w-60{
@@ -732,10 +716,6 @@ video {
 
 .p-8{
   padding: 2rem;
-}
-
-.p-6{
-  padding: 1.5rem;
 }
 
 .px-10{
