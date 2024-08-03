@@ -3,7 +3,7 @@ import close from "./assets/shared/icon-close.svg";
 const MobileMenu = ({ toggle, closeMenu }) => {
   return (
     <div // dialog will not position correctly
-      className={`fixed right-0 z-10 m-0 h-full w-4/6 flex-col gap-20 bg-transparent p-10 text-white backdrop-blur-lg ${
+      className={`fixed right-0 z-10 m-0 flex h-full w-4/6 flex-col gap-20 bg-transparent p-10 text-white backdrop-blur-lg transition-transform duration-300 ease-in-out ${
         toggle
       }`}
     >

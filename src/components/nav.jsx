@@ -4,9 +4,9 @@ import DesktopNav from "./desktop-nav";
 import { useMediaQuery } from "react-responsive";
 
 const Nav = () => {
-  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
   const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1279px)",
+    query: "(min-width: 768px) and (max-width: 1024px)",
   });
 
   return (

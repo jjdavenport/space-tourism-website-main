@@ -18,7 +18,7 @@ const mobileNav = () => {
         </button>
       </nav>
       <MobileMenu
-        toggle={menuOpen ? "flex" : "hidden"}
+        toggle={menuOpen ? "translate-x-0" : "translate-x-full"}
         closeMenu={toggleMenu}
       />
     </>
