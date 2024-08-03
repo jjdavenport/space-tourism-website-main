@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         barlow: "barlow condensed, sans-serif",
+        belleFair: "bellefair, sans-serif",
       },
       backgroundImage: {
         bgHomeDesktop:

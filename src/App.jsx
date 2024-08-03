@@ -5,7 +5,7 @@ import Nav from "./components/nav";
 function App() {
   return (
     <>
-      <main className="bg-bgHomeMobile md:bg-bgHomeTablet xl:bg-bgHomeDesktop font-barlow flex h-screen w-screen flex-col bg-cover bg-no-repeat text-white">
+      <main className="flex h-screen flex-col bg-bgHomeMobile bg-cover bg-no-repeat font-barlow text-white md:bg-bgHomeTablet xl:bg-bgHomeDesktop">
         <Nav />
         <HomepageContent />
       </main>

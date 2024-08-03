@@ -5,7 +5,9 @@ const main = () => {
         <article className="flex flex-col items-center text-center xl:items-start xl:text-left">
           <h1 className="flex flex-col text-2xl font-normal uppercase">
             So, you want to travel to{" "}
-            <strong className="text-9xl font-normal">Space</strong>{" "}
+            <strong className="font-belleFair text-7xl font-normal md:text-9xl">
+              Space
+            </strong>{" "}
           </h1>
           <p className="w-1/2">
             Let’s face it; if you want to go to space, you might as well
