@@ -614,6 +614,10 @@ video {
   width: 100%;
 }
 
+.w-screen{
+  width: 100vw;
+}
+
 .min-w-60{
   min-width: 15rem;
 }
@@ -644,6 +648,10 @@ video {
   justify-content: flex-end;
 }
 
+.justify-center{
+  justify-content: center;
+}
+
 .justify-between{
   justify-content: space-between;
 }
@@ -652,12 +660,20 @@ video {
   justify-content: space-evenly;
 }
 
+.gap-1{
+  gap: 0.25rem;
+}
+
 .gap-20{
   gap: 5rem;
 }
 
 .gap-8{
   gap: 2rem;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .rounded-full{
@@ -698,8 +714,20 @@ video {
   --tw-bg-opacity: 0.05;
 }
 
+.bg-bgCrewMobile{
+  background-image: url('/src/components/assets/crew/background-crew-mobile.jpg');
+}
+
+.bg-bgDestinationMobile{
+  background-image: url('/src/components/assets/destination/background-destination-mobile.jpg');
+}
+
 .bg-bgHomeMobile{
   background-image: url('/src/components/assets/home/background-home-mobile.jpg');
+}
+
+.bg-bgTechnologyMobile{
+  background-image: url('/src/components/assets/technology/background-technology-mobile.jpg');
 }
 
 .bg-cover{
@@ -773,6 +801,11 @@ video {
   line-height: 1;
 }
 
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-normal{
   font-weight: 400;
 }
@@ -840,8 +873,16 @@ video {
 }
 
 @media (min-width: 768px){
+  .md\:bg-bgCrewTablet{
+    background-image: url('/src/components/assets/crew/background-crew-tablet.jpg');
+  }
+
   .md\:bg-bgHomeTablet{
     background-image: url('/src/components/assets/home/background-home-tablet.jpg');
+  }
+
+  .md\:bg-bgTechnologyTablet{
+    background-image: url('/src/components/assets/technology/background-technology-tablet.jpg');
   }
 
   .md\:text-9xl{
@@ -863,8 +904,20 @@ video {
     gap: 2rem;
   }
 
+  .lg\:bg-bgCrewDesktop{
+    background-image: url('/src/components/assets/crew/background-crew-desktop.jpg');
+  }
+
+  .lg\:bg-bgDestinationDesktop{
+    background-image: url('/src/components/assets/destination/background-destination-desktop.jpg');
+  }
+
   .lg\:bg-bgHomeDesktop{
     background-image: url('/src/components/assets/home/background-home-desktop.jpg');
+  }
+
+  .lg\:bg-bgTechnologyDesktop{
+    background-image: url('/src/components/assets/technology/background-technology-desktop.jpg');
   }
 
   .lg\:p-8{

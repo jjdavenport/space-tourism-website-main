@@ -1,15 +1,20 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Technology from "./technology";
+import Crew from "./crew";
+import Destination from "./destination";
+import Homepage from "./homepage";
 import "./App.css";
-import HomepageContent from "./components/homepage-content";
-import Nav from "./components/nav";
 
 function App() {
   return (
-    <>
-      <main className="flex h-screen flex-col bg-bgHomeMobile bg-cover bg-no-repeat font-barlow text-white md:bg-bgHomeTablet lg:bg-bgHomeDesktop">
-        <Nav />
-        <HomepageContent />
-      </main>
-    </>
+    <Router basename="/space-tourism-website-main">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/destination" element={<Destination />} />
+        <Route path="/crew" element={<Crew />} />
+        <Route path="/technology" element={<Technology />} />
+      </Routes>
+    </Router>
   );
 }
 
