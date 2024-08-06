@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const main = () => {
   return (
     <>
@@ -16,9 +18,12 @@ const main = () => {
             world experience!
           </p>
         </article>
-        <button className="relative min-h-60 min-w-60 rounded-full bg-white font-belleFair text-5xl uppercase text-black transition-all duration-300 hover:shadow-2xl hover:shadow-white">
+        <Link
+          to="/destination"
+          className="relative flex min-h-60 min-w-60 items-center justify-center rounded-full bg-white font-belleFair text-5xl uppercase text-black transition-all duration-300 hover:shadow-2xl hover:shadow-white"
+        >
           Explore
-        </button>
+        </Link>
       </section>
     </>
   );
