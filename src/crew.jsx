@@ -8,7 +8,6 @@ const CrewHomepage = () => {
       <main className="flex h-screen w-screen flex-col overflow-hidden bg-bgCrewMobile bg-cover bg-no-repeat font-barlow text-white md:bg-bgCrewTablet lg:bg-bgCrewDesktop">
         <Nav />
         <CrewContent />
-        <Footer />
       </main>
     </>
   );

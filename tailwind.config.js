@@ -3,6 +3,15 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   theme: {
     extend: {
+      keyframes: {
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        "spin-slow": "rotate 240s linear infinite",
+      },
       fontFamily: {
         barlow: "barlow condensed, sans-serif",
         belleFair: "bellefair, sans-serif",
