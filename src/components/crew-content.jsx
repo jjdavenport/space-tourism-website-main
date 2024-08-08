@@ -3,6 +3,12 @@ import { useState } from "react";
 
 const CrewContent = () => {
   const [crew, selectCrew] = useState(Data.crew[0]);
+  const [button, activeButton] = useState("1");
+
+  const click = (buttonNum) => {
+    activeButton(buttonNum);
+  };
+
   return (
     <>
       <section className="flex flex-col">
@@ -18,16 +24,28 @@ const CrewContent = () => {
             </div>
             <ul className="flex gap-4">
               <li>
-                <button className="h-5 w-5 rounded-full bg-white bg-opacity-10"></button>
+                <button
+                  className={`${button === "1" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 hover:bg-opacity-100`}
+                  onClick={() => click("1")}
+                ></button>
               </li>
               <li>
-                <button className="h-5 w-5 rounded-full bg-white bg-opacity-10"></button>
+                <button
+                  className={`${button === "2" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 hover:bg-opacity-100`}
+                  onClick={() => click("2")}
+                ></button>
               </li>
               <li>
-                <button className="h-5 w-5 rounded-full bg-white bg-opacity-10"></button>
+                <button
+                  className={`${button === "3" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 hover:bg-opacity-100`}
+                  onClick={() => click("3")}
+                ></button>
               </li>
               <li>
-                <button className="h-5 w-5 rounded-full bg-white bg-opacity-10"></button>
+                <button
+                  className={`${button === "4" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 hover:bg-opacity-100`}
+                  onClick={() => click("4")}
+                ></button>
               </li>
             </ul>
           </article>

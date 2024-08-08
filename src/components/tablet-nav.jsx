@@ -1,7 +1,13 @@
 import logo from "./assets/shared/logo.svg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const TabletNav = () => {
+  const [page, activePage] = useState("home");
+
+  const click = (page) => {
+    activePage(page);
+  };
   return (
     <nav className="flex items-center justify-between">
       <img src={logo} alt="Logo" className="p-8" />
@@ -9,7 +15,8 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/"
-            className="flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white"
+            className={`${page === "home" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 transition-all duration-300 hover:border-white`}
+            onClick={() => click("home")}
           >
             Home
           </Link>
@@ -17,7 +24,8 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/destination"
-            className="flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white"
+            className={`${page === "destination" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white`}
+            onClick={() => click("destination")}
           >
             Destination
           </Link>
@@ -25,7 +33,8 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/crew"
-            className="flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white"
+            className={`${page === "crew" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white`}
+            onClick={() => click("crew")}
           >
             Crew
           </Link>
@@ -33,7 +42,8 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/technology"
-            className="flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white"
+            className={`${page === "technology" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white`}
+            onClick={() => click("technology")}
           >
             Technology
           </Link>

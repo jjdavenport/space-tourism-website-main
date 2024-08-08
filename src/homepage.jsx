@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 const Homepage = () => {
   return (
     <>
-      <main className="flex h-screen w-screen flex-col overflow-hidden bg-bgHomeMobile bg-cover bg-no-repeat font-barlow text-white md:bg-bgHomeTablet lg:bg-bgHomeDesktop">
+      <main className="flex h-screen w-screen flex-col bg-bgHomeMobile bg-cover bg-no-repeat font-barlow text-white md:bg-bgHomeTablet lg:bg-bgHomeDesktop">
         <Nav />
         <HomepageContent />
         <Footer />

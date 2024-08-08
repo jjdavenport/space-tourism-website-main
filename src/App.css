@@ -618,10 +618,6 @@ video {
   width: 4rem;
 }
 
-.w-3\/6{
-  width: 50%;
-}
-
 .w-4\/6{
   width: 66.666667%;
 }
@@ -670,10 +666,6 @@ video {
   animation: rotate 240s linear infinite;
 }
 
-.flex-row-reverse{
-  flex-direction: row-reverse;
-}
-
 .flex-col{
   flex-direction: column;
 }
@@ -718,10 +710,6 @@ video {
   gap: 1rem;
 }
 
-.gap-60{
-  gap: 15rem;
-}
-
 .gap-8{
   gap: 2rem;
 }
@@ -734,8 +722,16 @@ video {
   border-radius: 9999px;
 }
 
+.border{
+  border-width: 1px;
+}
+
 .border-b{
   border-bottom-width: 1px;
+}
+
+.border-b-2{
+  border-bottom-width: 2px;
 }
 
 .border-b-4{
@@ -766,6 +762,10 @@ video {
 
 .bg-opacity-10{
   --tw-bg-opacity: 0.1;
+}
+
+.bg-opacity-100{
+  --tw-bg-opacity: 1;
 }
 
 .bg-opacity-5{
@@ -805,12 +805,12 @@ video {
   padding: 2.5rem;
 }
 
-.p-8{
-  padding: 2rem;
-}
-
 .p-2{
   padding: 0.5rem;
+}
+
+.p-8{
+  padding: 2rem;
 }
 
 .px-10{
@@ -888,11 +888,6 @@ video {
   line-height: 1rem;
 }
 
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .font-normal{
   font-weight: 400;
 }
@@ -965,6 +960,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-opacity-100:hover{
+  --tw-bg-opacity: 1;
+}
+
 .hover\:text-black:hover{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1023,16 +1022,12 @@ video {
     background-image: url('/src/components/assets/technology/background-technology-tablet.jpg');
   }
 
-  .md\:p-10{
-    padding: 2.5rem;
-  }
-
   .md\:p-0{
     padding: 0px;
   }
 
-  .md\:p-8{
-    padding: 2rem;
+  .md\:p-10{
+    padding: 2.5rem;
   }
 
   .md\:text-start{

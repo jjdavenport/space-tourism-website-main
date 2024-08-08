@@ -3,6 +3,13 @@ import { useState } from "react";
 
 const TechnologyContent = () => {
   const [tech, selectTech] = useState(Data.technology[0]);
+
+  const [button, activeButton] = useState("1");
+
+  const click = (button) => {
+    activeButton(button);
+  };
+
   return (
     <>
       <section className="flex flex-1 flex-col justify-center">
@@ -19,17 +26,26 @@ const TechnologyContent = () => {
               </div>
               <ul className="flex justify-between gap-4 md:flex-col">
                 <li>
-                  <button className="h-16 w-16 rounded-full bg-transparent font-belleFair text-xl text-white outline outline-1 outline-white hover:bg-white hover:text-black hover:outline-none">
+                  <button
+                    className={`${button === "1" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-xl outline outline-1 outline-white hover:bg-white hover:text-black hover:outline-none`}
+                    onClick={() => click("1")}
+                  >
                     1
                   </button>
                 </li>
                 <li>
-                  <button className="h-16 w-16 rounded-full bg-transparent font-belleFair text-xl text-white outline outline-1 outline-white hover:bg-white hover:text-black hover:outline-none">
+                  <button
+                    className={`${button === "2" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-xl outline outline-1 outline-white hover:bg-white hover:text-black hover:outline-none`}
+                    onClick={() => click("2")}
+                  >
                     2
                   </button>
                 </li>
                 <li>
-                  <button className="h-16 w-16 rounded-full bg-transparent font-belleFair text-xl text-white outline outline-1 outline-white hover:bg-white hover:text-black hover:outline-none">
+                  <button
+                    className={`${button === "3" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-xl outline outline-1 outline-white hover:bg-white hover:text-black hover:outline-none`}
+                    onClick={() => click("3")}
+                  >
                     3
                   </button>
                 </li>
