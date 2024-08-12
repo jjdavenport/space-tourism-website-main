@@ -1,13 +1,9 @@
 import logo from "./assets/shared/logo.svg";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const TabletNav = () => {
-  const [page, activePage] = useState("home");
-
-  const click = (page) => {
-    activePage(page);
-  };
+  const location = useLocation();
+  const path = location.pathname;
   return (
     <nav className="flex items-center justify-between">
       <img src={logo} alt="Logo" className="p-8" />
@@ -15,8 +11,7 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/"
-            className={`${page === "home" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 transition-all duration-300 hover:border-white`}
-            onClick={() => click("home")}
+            className={`${path === "/" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 transition-all duration-300 hover:border-white`}
           >
             Home
           </Link>
@@ -24,8 +19,7 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/destination"
-            className={`${page === "destination" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white`}
-            onClick={() => click("destination")}
+            className={`${path === "/destination" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 transition-all duration-300 hover:border-white`}
           >
             Destination
           </Link>
@@ -33,8 +27,7 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/crew"
-            className={`${page === "crew" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white`}
-            onClick={() => click("crew")}
+            className={`${path === "/crew" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 transition-all duration-300 hover:border-white`}
           >
             Crew
           </Link>
@@ -42,8 +35,7 @@ const TabletNav = () => {
         <li className="flex h-full">
           <Link
             to="/technology"
-            className={`${page === "technology" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 border-transparent transition-all duration-300 hover:border-white`}
-            onClick={() => click("technology")}
+            className={`${path === "/technology" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 transition-all duration-300 hover:border-white`}
           >
             Technology
           </Link>

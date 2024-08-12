@@ -12,7 +12,7 @@ const TechnologyContent = () => {
 
   return (
     <>
-      <section className="flex flex-1 flex-col justify-center">
+      <section className="flex flex-1 flex-col">
         <span className="p-10 text-5xl uppercase">03 Space launch 101</span>
         <div className="flex flex-col md:flex-row">
           <article className="flex flex-col justify-center p-8 text-center md:w-3/6 md:text-start">
