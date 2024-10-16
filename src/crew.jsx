@@ -1,5 +1,4 @@
 import Nav from "./components/nav";
-import Footer from "./components/footer";
 import CrewContent from "./components/crew-content";
 
 const CrewHomepage = () => {

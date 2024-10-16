@@ -3,7 +3,6 @@ import Technology from "./technology";
 import Crew from "./crew";
 import Destination from "./destination";
 import Homepage from "./homepage";
-import "./App.css";
 
 function App() {
   return (
