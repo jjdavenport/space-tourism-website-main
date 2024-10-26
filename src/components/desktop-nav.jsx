@@ -13,7 +13,7 @@ const desktopNav = () => {
           <li className="flex h-full">
             <Link
               to="/"
-              className={`${path === "/" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-all duration-300 hover:border-white`}
+              className={`${path === "/" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 ease-in-out hover:border-white`}
             >
               00 Home
             </Link>
@@ -21,7 +21,7 @@ const desktopNav = () => {
           <li className="flex h-full">
             <Link
               to="/destination"
-              className={`${path === "/destination" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-all duration-300 hover:border-white`}
+              className={`${path === "/destination" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 ease-in-out hover:border-white`}
             >
               01 Destination
             </Link>
@@ -29,7 +29,7 @@ const desktopNav = () => {
           <li className="flex h-full">
             <Link
               to="/crew"
-              className={`${path === "/crew" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-all duration-300 hover:border-white`}
+              className={`${path === "/crew" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 ease-in-out hover:border-white`}
             >
               02 Crew
             </Link>
@@ -37,7 +37,7 @@ const desktopNav = () => {
           <li className="flex h-full">
             <Link
               to="/technology"
-              className={`${path === "/technology" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-all duration-300 hover:border-white`}
+              className={`${path === "/technology" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 hover:border-white`}
             >
               03 Technology
             </Link>
