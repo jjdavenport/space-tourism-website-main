@@ -15,20 +15,23 @@ const CrewContent = () => {
 
   return (
     <>
-      <Slider>
-        <div>
-          <SliderCrew data={data.crew[0]} button={button} />
-        </div>
-        <div>
-          <SliderCrew data={data.crew[1]} button={button} />
-        </div>
-        <div>
-          <SliderCrew data={data.crew[2]} button={button} />
-        </div>
-        <div>
-          <SliderCrew data={data.crew[3]} button={button} />
-        </div>
-      </Slider>
+      <main className="flex flex-1 flex-col">
+        <span className="p-8 text-5xl uppercase">02 Meet your crew</span>
+        <Slider>
+          <div>
+            <SliderCrew data={data.crew[0]} button={button} />
+          </div>
+          <div>
+            <SliderCrew data={data.crew[1]} button={button} />
+          </div>
+          <div>
+            <SliderCrew data={data.crew[2]} button={button} />
+          </div>
+          <div>
+            <SliderCrew data={data.crew[3]} button={button} />
+          </div>
+        </Slider>
+      </main>
     </>
   );
 };

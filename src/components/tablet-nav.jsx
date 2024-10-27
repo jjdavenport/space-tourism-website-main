@@ -5,7 +5,7 @@ const TabletNav = () => {
   const location = useLocation();
   const path = location.pathname;
   return (
-    <nav className="flex items-center justify-between">
+    <nav className="flex h-24 items-center justify-between">
       <img src={logo} alt="Logo" className="p-8" />
       <ul className="flex h-full items-center gap-8 bg-white bg-opacity-5 px-10 uppercase backdrop-blur-lg">
         <li className="flex h-full">
