@@ -17,7 +17,10 @@ const TechnologyContent = () => {
   return (
     <>
       <main className="flex flex-1 flex-col">
-        <span className="p-10 text-5xl uppercase">03 Space launch 101</span>
+        <span className="flex gap-4 p-10 text-4xl uppercase">
+          <span>03</span>
+          Space launch 101
+        </span>
         <Slider>
           <div>
             <SliderTechnology data={data.technology[0]} button={button} />

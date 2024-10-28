@@ -14,11 +14,14 @@ const DestinationContent = () => {
 
   return (
     <>
-      <main className="flex flex-1 flex-col gap-4">
-        <span className="p-10 text-4xl uppercase">
-          01 Pick your Destination
+      <main className="flex flex-1 flex-col gap-4 md:gap-0 md:p-0">
+        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest md:p-10 md:px-28 md:text-3xl">
+          <span className="font-semibold tracking-widest text-white text-opacity-20">
+            01
+          </span>
+          Pick your Destination
         </span>
-        <Slider>
+        <Slider arrows={false}>
           <div>
             <SliderDestination
               data={data.destinations[0]}

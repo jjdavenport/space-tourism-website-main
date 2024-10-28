@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 const MobileMenu = ({ toggle, closeMenu }) => {
   return (
     <aside
-      aria-expanded={toggle}
-      aria-hidden={closeMenu}
-      className={`fixed right-0 z-10 m-0 flex h-full w-4/6 flex-col gap-20 overflow-hidden bg-transparent p-10 text-white backdrop-blur-lg transition-transform duration-300 ease-in-out ${
+      className={`fixed right-0 z-10 m-0 flex h-full min-h-screen w-4/6 flex-col gap-20 overflow-hidden bg-transparent p-10 text-white backdrop-blur-lg transition-transform duration-300 ease-in-out ${
         toggle
       }`}
     >

@@ -11,10 +11,10 @@ const mobileNav = () => {
   };
   return (
     <>
-      <nav className="flex items-center justify-between p-8">
-        <img src={logo} alt="" />
+      <nav className="flex items-center justify-between p-5">
+        <img className="w-9" src={logo} />
         <button onClick={toggleMenu}>
-          <img src={menu} alt="" />
+          <img className="w-6" src={menu} />
         </button>
       </nav>
       <MobileMenu

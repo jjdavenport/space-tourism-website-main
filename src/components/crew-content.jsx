@@ -16,7 +16,12 @@ const CrewContent = () => {
   return (
     <>
       <main className="flex flex-1 flex-col">
-        <span className="p-8 text-5xl uppercase">02 Meet your crew</span>
+        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest md:p-10 md:text-4xl">
+          <span className="font-semibold tracking-widest text-white text-opacity-20">
+            02
+          </span>
+          Meet your crew
+        </span>
         <Slider>
           <div>
             <SliderCrew data={data.crew[0]} button={button} />

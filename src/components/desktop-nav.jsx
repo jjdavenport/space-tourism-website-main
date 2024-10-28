@@ -6,40 +6,40 @@ const desktopNav = () => {
   const path = location.pathname;
   return (
     <>
-      <nav className="flex items-center justify-between py-8">
-        <img src={logo} alt="" className="px-8" />
-        <div className="z-10 -mr-20 h-1 w-full border-b border-white border-opacity-40"></div>
-        <ul className="flex h-full w-full items-center justify-evenly gap-8 pl-32 pr-16 uppercase backdrop-blur-3xl">
+      <nav className="flex w-full items-center justify-between py-8">
+        <img src={logo} className="px-8" />
+        <div className="z-10 -mr-10 h-1 w-full border-b-2 border-white border-opacity-20"></div>
+        <ul className="~md/xl:~pr-20/24 ~md/xl:~pl-20/40 flex h-full w-full items-center justify-evenly gap-20 bg-white bg-opacity-[0.01] text-lg uppercase backdrop-blur-xl">
           <li className="flex h-full">
             <Link
               to="/"
-              className={`${path === "/" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 ease-in-out hover:border-white`}
+              className={`${path === "/" ? "border-white" : "border-transparent"} flex h-full items-center gap-2 whitespace-nowrap border-b-4 py-10 font-light tracking-widest transition-colors duration-300 ease-in-out hover:border-white`}
             >
-              00 Home
+              <span className="font-bold">00</span> Home
             </Link>
           </li>
           <li className="flex h-full">
             <Link
               to="/destination"
-              className={`${path === "/destination" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 ease-in-out hover:border-white`}
+              className={`${path === "/destination" ? "border-white" : "border-transparent"} flex h-full items-center gap-2 whitespace-nowrap border-b-4 py-10 font-light tracking-widest transition-colors duration-300 ease-in-out hover:border-white`}
             >
-              01 Destination
+              <span className="font-bold">01</span> Destination
             </Link>
           </li>
           <li className="flex h-full">
             <Link
               to="/crew"
-              className={`${path === "/crew" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 ease-in-out hover:border-white`}
+              className={`${path === "/crew" ? "border-white" : "border-transparent"} flex h-full items-center gap-2 whitespace-nowrap border-b-4 py-10 font-light tracking-widest transition-colors duration-300 ease-in-out hover:border-white`}
             >
-              02 Crew
+              <span className="font-bold">02</span> Crew
             </Link>
           </li>
           <li className="flex h-full">
             <Link
               to="/technology"
-              className={`${path === "/technology" ? "border-white" : "border-transparent"} flex h-full items-center border-b-4 py-10 transition-colors duration-1000 hover:border-white`}
+              className={`${path === "/technology" ? "border-white" : "border-transparent"} flex h-full items-center gap-2 whitespace-nowrap border-b-4 py-10 font-light tracking-widest transition-colors duration-300 hover:border-white`}
             >
-              03 Technology
+              <span className="font-bold">03</span> Technology
             </Link>
           </li>
         </ul>

@@ -1,7 +1,13 @@
+import fluid, { extract, screens } from "fluid-tailwind";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
+  content: {
+    files: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
+    extract,
+  },
   theme: {
+    screens,
     extend: {
       keyframes: {
         rotate: {
@@ -13,8 +19,8 @@ export default {
         "spin-slow": "rotate 240s linear infinite",
       },
       fontFamily: {
-        barlow: "barlow condensed, sans-serif",
-        belleFair: "bellefair, sans-serif",
+        barlow: ["barlow condensed", "sans-serif"],
+        belleFair: ["bellefair", "sans-serif"],
       },
       backgroundImage: {
         bgHomeDesktop:
@@ -42,7 +48,10 @@ export default {
         bgTechnologyTablet:
           "url('/src/components/assets/technology/background-technology-tablet.jpg')",
       },
+      colors: {
+        lightBlue: "hsl(233, 92%, 91%)",
+      },
     },
   },
-  plugins: [],
+  plugins: [fluid],
 };

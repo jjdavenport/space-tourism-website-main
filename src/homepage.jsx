@@ -5,11 +5,11 @@ import Footer from "./components/footer";
 const Homepage = () => {
   return (
     <>
-      <main className="flex h-screen w-screen flex-col bg-bgHomeMobile bg-cover bg-no-repeat font-barlow text-white md:bg-bgHomeTablet lg:bg-bgHomeDesktop">
+      <div className="flex h-full min-h-screen w-screen flex-col bg-bgHomeMobile bg-cover bg-no-repeat font-barlow text-white md:items-center md:bg-bgHomeTablet lg:bg-bgHomeDesktop">
         <Nav />
         <HomepageContent />
         <Footer />
-      </main>
+      </div>
     </>
   );
 };
