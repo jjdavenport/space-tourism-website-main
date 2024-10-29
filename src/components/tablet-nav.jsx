@@ -7,7 +7,7 @@ const TabletNav = () => {
   return (
     <nav className="flex h-24 w-full items-center justify-between">
       <img src={logo} alt="Logo" className="p-8" />
-      <ul className="flex h-full items-center gap-8 bg-white bg-opacity-5 px-10 uppercase backdrop-blur-lg">
+      <ul className="flex h-full items-center gap-8 bg-white bg-opacity-5 px-10 font-light uppercase tracking-widest backdrop-blur-md">
         <li className="flex h-full">
           <Link
             to="/"

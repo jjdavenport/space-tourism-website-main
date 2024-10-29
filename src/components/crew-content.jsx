@@ -15,8 +15,8 @@ const CrewContent = () => {
 
   return (
     <>
-      <main className="flex flex-1 flex-col">
-        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest md:p-10 md:text-4xl">
+      <main className="flex flex-1 flex-col lg:justify-end">
+        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest lg:px-28 lg:py-0 lg:text-3xl">
           <span className="font-semibold tracking-widest text-white text-opacity-20">
             02
           </span>

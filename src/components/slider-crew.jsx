@@ -1,16 +1,16 @@
 const SliderCrew = ({ data, button }) => {
   return (
     <>
-      <div className="flex flex-col md:flex-row">
-        <article className="flex flex-col items-center justify-center gap-4 p-8 text-center md:w-1/2 md:items-start md:p-0 md:text-start">
+      <div className="flex flex-col md:justify-center lg:flex-row">
+        <article className="flex flex-col items-center justify-center gap-4 p-8 text-center lg:w-[400px] lg:items-start lg:p-0 lg:text-start">
           <div className="flex flex-col gap-4">
-            <span className="font-belleFair text-2xl uppercase tracking-widest text-white text-opacity-20">
+            <span className="font-belleFair text-2xl font-light uppercase tracking-widest text-white text-opacity-30">
               {data.role}
             </span>
             <h2 className="font-belleFair text-3xl uppercase md:text-7xl">
               {data.name}
             </h2>
-            <p className="text-lightBlue font-light tracking-wide">
+            <p className="font-light tracking-wide text-lightBlue">
               {data.bio}
             </p>
           </div>
@@ -41,7 +41,7 @@ const SliderCrew = ({ data, button }) => {
             </li>
           </ul>
         </article>
-        <img className="object-contain md:w-1/2" src={data.images.png} />
+        <img className="h-[500px] object-contain" src={data.images.png} />
       </div>
     </>
   );

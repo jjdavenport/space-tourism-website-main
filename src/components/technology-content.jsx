@@ -17,8 +17,10 @@ const TechnologyContent = () => {
   return (
     <>
       <main className="flex flex-1 flex-col">
-        <span className="flex gap-4 p-10 text-4xl uppercase">
-          <span>03</span>
+        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest lg:px-28 lg:py-0 lg:text-3xl">
+          <span className="font-semibold tracking-widest text-white text-opacity-20">
+            03
+          </span>
           Space launch 101
         </span>
         <Slider>

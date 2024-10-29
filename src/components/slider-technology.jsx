@@ -1,22 +1,22 @@
 const SliderTechnology = ({ data, button }) => {
   return (
     <>
-      <div className="flex flex-col md:flex-row">
-        <article className="flex flex-col justify-center p-8 text-center md:w-3/6 md:text-start">
-          <div className="flex flex-col gap-8 md:flex-row-reverse">
+      <div className="flex flex-col items-center lg:flex-row lg:justify-end">
+        <article className="flex flex-col justify-center p-8 text-center lg:text-start">
+          <div className="flex flex-col gap-8 lg:flex-row-reverse">
             <div className="flex flex-col gap-4">
-              <span className="text-lightBlue uppercase tracking-widest">
+              <span className="uppercase tracking-widest text-lightBlue">
                 The terminology ...
               </span>
-              <h3 className="font-belleFair text-6xl uppercase">{data.name}</h3>
-              <p className="text-lightBlue font-light leading-7 tracking-wide">
+              <h3 className="font-belleFair text-3xl uppercase">{data.name}</h3>
+              <p className="h-[200px] font-light leading-7 tracking-wider text-lightBlue md:h-fit">
                 {data.description}
               </p>
             </div>
-            <ul className="flex justify-between gap-8 md:flex-col">
+            <ul className="flex justify-between gap-8 lg:flex-col">
               <li>
                 <button
-                  className={`${button === "1" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none`}
+                  className={`${button === "1" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
                   onClick={() => click("1")}
                 >
                   1
@@ -24,7 +24,7 @@ const SliderTechnology = ({ data, button }) => {
               </li>
               <li>
                 <button
-                  className={`${button === "2" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none`}
+                  className={`${button === "2" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
                   onClick={() => click("2")}
                 >
                   2
@@ -32,7 +32,7 @@ const SliderTechnology = ({ data, button }) => {
               </li>
               <li>
                 <button
-                  className={`${button === "3" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none`}
+                  className={`${button === "3" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
                   onClick={() => click("3")}
                 >
                   3
@@ -42,7 +42,7 @@ const SliderTechnology = ({ data, button }) => {
           </div>
         </article>
         <img
-          className="object-contain md:w-3/6"
+          className="object-contain"
           src={data.images.portrait}
           alt={data.name}
         />
