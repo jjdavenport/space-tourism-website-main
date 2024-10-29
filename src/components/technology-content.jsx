@@ -1,17 +1,17 @@
 import data from "./assets/data.json";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 import SliderTechnology from "./slider-technology";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const TechnologyContent = () => {
-  const [tech, selectTech] = useState(data.technology[0]);
+  const [button, setButton] = useState(0);
+  const slider = useRef(null);
 
-  const [button, activeButton] = useState("1");
-
-  const click = (button) => {
-    activeButton(button);
+  const slide = (num) => {
+    setButton(num);
+    slider.current.slickGoTo(num);
   };
 
   return (
@@ -23,15 +23,27 @@ const TechnologyContent = () => {
           </span>
           Space launch 101
         </span>
-        <Slider>
+        <Slider ref={slider}>
           <div>
-            <SliderTechnology data={data.technology[0]} button={button} />
+            <SliderTechnology
+              data={data.technology[0]}
+              button={button}
+              onClick={slide}
+            />
           </div>
           <div>
-            <SliderTechnology data={data.technology[1]} button={button} />
+            <SliderTechnology
+              data={data.technology[1]}
+              button={button}
+              onClick={slide}
+            />
           </div>
           <div>
-            <SliderTechnology data={data.technology[2]} button={button} />
+            <SliderTechnology
+              data={data.technology[2]}
+              button={button}
+              onClick={slide}
+            />
           </div>
         </Slider>
       </main>

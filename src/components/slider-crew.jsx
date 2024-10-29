@@ -1,4 +1,4 @@
-const SliderCrew = ({ data, button }) => {
+const SliderCrew = ({ data, button, onClick }) => {
   return (
     <>
       <div className="flex flex-col md:justify-center lg:flex-row">
@@ -17,31 +17,31 @@ const SliderCrew = ({ data, button }) => {
           <ul className="flex gap-4">
             <li>
               <button
-                className={`${button === "1" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
-                onClick={() => click("1")}
+                className={`${button === 0 ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
+                onClick={() => onClick(0)}
               ></button>
             </li>
             <li>
               <button
-                className={`${button === "2" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
-                onClick={() => click("2")}
+                className={`${button === 1 ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
+                onClick={() => onClick(1)}
               ></button>
             </li>
             <li>
               <button
-                className={`${button === "3" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
-                onClick={() => click("3")}
+                className={`${button === 2 ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
+                onClick={() => onClick(2)}
               ></button>
             </li>
             <li>
               <button
-                className={`${button === "4" ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
-                onClick={() => click("4")}
+                className={`${button === 3 ? "bg-opacity-100" : "bg-opacity-10"} h-5 w-5 rounded-full bg-white bg-opacity-10 transition duration-300 ease-in-out hover:bg-opacity-100`}
+                onClick={() => onClick(3)}
               ></button>
             </li>
           </ul>
         </article>
-        <img className="h-[500px] object-contain" src={data.images.png} />
+        <img className="h-[700px] object-contain" src={data.images.png} />
       </div>
     </>
   );

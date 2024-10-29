@@ -1,4 +1,4 @@
-const SliderDestination = ({ data, planets, button }) => {
+const SliderDestination = ({ data, planets, button, onClick }) => {
   return (
     <>
       <div className="flex flex-1 flex-col items-center gap-10 p-5 lg:flex-row lg:justify-center lg:gap-20 lg:p-10">
@@ -9,6 +9,7 @@ const SliderDestination = ({ data, planets, button }) => {
               {planets.map((i, index) => (
                 <li key={index}>
                   <button
+                    onClick={() => onClick(i.name)}
                     className={`${button === i.name ? "border-white" : "border-transparent"} border-b-2 text-2xl uppercase tracking-widest text-lightBlue transition duration-300 ease-in-out md:text-xl`}
                   >
                     {i.name}

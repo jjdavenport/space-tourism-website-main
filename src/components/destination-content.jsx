@@ -1,5 +1,5 @@
 import data from "./assets/data.json";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 import SliderDestination from "./slider-destination";
 import "slick-carousel/slick/slick.css";
@@ -7,9 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 const DestinationContent = () => {
   const [button, setButton] = useState("moon");
+  const slider = useRef(null);
 
-  const destinationBtn = (destination) => {
-    setButton(destination);
+  const slide = (destName) => {
+    setButton(destName);
+    const index = data.destinations.findIndex((dest) => dest.name === destName);
+    slider.current.slickGoTo(index);
   };
 
   return (
@@ -21,9 +24,10 @@ const DestinationContent = () => {
           </span>
           Pick your Destination
         </span>
-        <Slider arrows={false}>
+        <Slider arrows={false} ref={slider}>
           <div>
             <SliderDestination
+              onClick={slide}
               data={data.destinations[0]}
               planets={data.destinations}
               button={button}
@@ -31,12 +35,15 @@ const DestinationContent = () => {
           </div>
           <div>
             <SliderDestination
+              onClick={slide}
               planets={data.destinations}
               data={data.destinations[1]}
+              button={button}
             />
           </div>
           <div>
             <SliderDestination
+              onClick={slide}
               planets={data.destinations}
               data={data.destinations[2]}
               button={button}
@@ -44,6 +51,7 @@ const DestinationContent = () => {
           </div>
           <div>
             <SliderDestination
+              onClick={slide}
               planets={data.destinations}
               data={data.destinations[3]}
               button={button}

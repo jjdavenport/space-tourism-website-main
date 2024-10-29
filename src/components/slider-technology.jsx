@@ -1,4 +1,4 @@
-const SliderTechnology = ({ data, button }) => {
+const SliderTechnology = ({ data, button, onClick }) => {
   return (
     <>
       <div className="flex flex-col items-center lg:flex-row lg:justify-end">
@@ -16,24 +16,24 @@ const SliderTechnology = ({ data, button }) => {
             <ul className="flex justify-between gap-8 lg:flex-col">
               <li>
                 <button
-                  className={`${button === "1" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
-                  onClick={() => click("1")}
+                  className={`${button === 0 ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
+                  onClick={() => onClick(0)}
                 >
                   1
                 </button>
               </li>
               <li>
                 <button
-                  className={`${button === "2" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
-                  onClick={() => click("2")}
+                  className={`${button === 1 ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
+                  onClick={() => onClick(1)}
                 >
                   2
                 </button>
               </li>
               <li>
                 <button
-                  className={`${button === "3" ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
-                  onClick={() => click("3")}
+                  className={`${button === 2 ? "bg-white text-black" : "bg-transparent text-white"} h-16 w-16 rounded-full font-belleFair text-3xl outline outline-1 outline-white transition duration-300 ease-in-out hover:bg-white hover:text-black hover:outline-none lg:h-24 lg:w-24`}
+                  onClick={() => onClick(2)}
                 >
                   3
                 </button>

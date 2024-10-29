@@ -1,16 +1,17 @@
 import data from "./assets/data.json";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SliderCrew from "./slider-crew";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CrewContent = () => {
-  const [crew, selectCrew] = useState(data.crew[0]);
-  const [button, activeButton] = useState("1");
+  const [button, setButton] = useState(0);
+  const slider = useRef(null);
 
-  const click = (buttonNum) => {
-    activeButton(buttonNum);
+  const slide = (num) => {
+    setButton(num);
+    slider.current.slickGoTo(num);
   };
 
   return (
@@ -22,18 +23,18 @@ const CrewContent = () => {
           </span>
           Meet your crew
         </span>
-        <Slider>
+        <Slider ref={slider}>
           <div>
-            <SliderCrew data={data.crew[0]} button={button} />
+            <SliderCrew data={data.crew[0]} button={button} onClick={slide} />
           </div>
           <div>
-            <SliderCrew data={data.crew[1]} button={button} />
+            <SliderCrew data={data.crew[1]} button={button} onClick={slide} />
           </div>
           <div>
-            <SliderCrew data={data.crew[2]} button={button} />
+            <SliderCrew data={data.crew[2]} button={button} onClick={slide} />
           </div>
           <div>
-            <SliderCrew data={data.crew[3]} button={button} />
+            <SliderCrew data={data.crew[3]} button={button} onClick={slide} />
           </div>
         </Slider>
       </main>
