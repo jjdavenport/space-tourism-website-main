@@ -1,6 +1,5 @@
 import Nav from "./components/nav";
 import CrewContent from "./components/crew-content";
-import Footer from "./components/footer";
 
 const CrewHomepage = () => {
   return (

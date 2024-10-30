@@ -1,17 +1,17 @@
 const SliderTechnology = ({ data, button, onClick }) => {
   return (
     <>
-      <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:gap-10 lg:~pl-20/28">
-        <article className="flex flex-col justify-center p-8 text-center lg:order-2 lg:min-w-fit lg:p-0 lg:text-start">
+      <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between lg:gap-10 lg:~pl-20/28">
+        <article className="flex w-11/12 flex-col items-center justify-center text-center lg:order-2 lg:min-w-fit lg:text-start">
           <div className="flex flex-col gap-8 md:gap-0 lg:flex-row-reverse">
             <div className="flex flex-col gap-4">
               <span className="font-light uppercase tracking-widest text-lightBlue">
                 The terminology ...
               </span>
-              <h3 className="font-belleFair text-3xl uppercase lg:text-6xl">
+              <h3 className="font-belleFair text-3xl uppercase md:text-5xl lg:text-6xl">
                 {data.name}
               </h3>
-              <p className="h-[200px] font-light leading-7 tracking-wider text-lightBlue md:h-fit md:max-w-[350px]">
+              <p className="font-light leading-7 tracking-wider text-lightBlue md:h-fit md:max-w-[400px] lg:max-w-[350px]">
                 {data.description}
               </p>
             </div>
