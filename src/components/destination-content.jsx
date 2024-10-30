@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const DestinationContent = () => {
-  const [button, setButton] = useState("moon");
+  const [button, setButton] = useState(data.destinations[0].name);
   const slider = useRef(null);
 
   const slide = (destName) => {
@@ -24,7 +24,11 @@ const DestinationContent = () => {
           </span>
           Pick your Destination
         </span>
-        <Slider arrows={false} ref={slider}>
+        <Slider
+          afterChange={(i) => setButton(data.destinations[i].name)}
+          arrows={false}
+          ref={slider}
+        >
           <div>
             <SliderDestination
               onClick={slide}
