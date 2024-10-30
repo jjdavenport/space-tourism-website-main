@@ -2,7 +2,7 @@ const SliderTechnology = ({ data, button, onClick }) => {
   return (
     <>
       <div className="flex flex-col items-center gap-4 lg:flex-row lg:justify-between lg:gap-10 lg:~pl-20/28">
-        <article className="flex w-11/12 flex-col items-center justify-center text-center lg:order-2 lg:min-w-fit lg:text-start">
+        <article className="flex w-11/12 flex-col items-center justify-center pt-6 text-center lg:order-2 lg:min-w-fit lg:pt-0 lg:text-start">
           <div className="flex flex-col gap-8 md:gap-0 lg:flex-row-reverse">
             <div className="flex flex-col gap-4">
               <span className="font-light uppercase tracking-widest text-lightBlue">
@@ -11,7 +11,7 @@ const SliderTechnology = ({ data, button, onClick }) => {
               <h3 className="font-belleFair text-3xl uppercase md:text-5xl lg:text-6xl">
                 {data.name}
               </h3>
-              <p className="font-light leading-7 tracking-wider text-lightBlue md:h-fit md:max-w-[400px] lg:max-w-[350px]">
+              <p className="h-[180px] font-light leading-7 tracking-wider text-lightBlue md:h-fit md:max-w-[400px] lg:max-w-[350px]">
                 {data.description}
               </p>
             </div>
@@ -45,7 +45,7 @@ const SliderTechnology = ({ data, button, onClick }) => {
         </ul>
         <div className="lg:order-3">
           <img
-            className="object-contain"
+            className="object-cover"
             src={data.images.portrait}
             alt={data.name}
           />

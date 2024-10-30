@@ -2,7 +2,7 @@ const SliderDestination = ({ data, planets, button, onClick }) => {
   return (
     <>
       <div className="flex flex-1 flex-col items-center gap-10 p-5 lg:flex-row lg:justify-evenly lg:p-10">
-        <img className="animate-spin-slow lg:w-2/6" src={data.images.png} />
+        <img className="animate-spin lg:w-2/6" src={data.images.png} />
         <article className="flex flex-col items-center gap-6 divide-y-2 divide-white divide-opacity-15 p-2 md:w-1/2 md:gap-4 lg:w-[350px] lg:items-start lg:gap-12 lg:p-0 lg:text-start">
           <div className="flex flex-col items-center gap-6 md:gap-4 lg:items-start lg:gap-12">
             <ul className="flex gap-2 md:gap-6">
