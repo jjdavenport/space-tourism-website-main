@@ -6,9 +6,9 @@ const SliderCrew = ({ data, button, onClick }) => {
   return (
     <>
       <div
-        className={`${desktop && "~lg/xl:~pl-20/0"} flex flex-col items-center md:justify-center md:gap-4 lg:h-full lg:flex-row lg:justify-evenly lg:gap-0`}
+        className={`${desktop && "~lg/xl:~pl-20/4"} flex flex-col items-center md:justify-center md:gap-4 lg:h-full lg:flex-row lg:justify-evenly lg:gap-0`}
       >
-        <article className="flex flex-col items-center justify-center gap-10 p-8 text-center md:w-[600px] lg:w-auto lg:items-start lg:gap-20 lg:p-0 lg:text-start">
+        <article className="flex flex-col items-center justify-center gap-10 p-8 text-center md:w-[600px] lg:w-fit lg:min-w-[550px] lg:items-start lg:gap-20 lg:p-0 lg:text-start">
           <div className="flex flex-col gap-4 lg:gap-6">
             <span className="font-belleFair text-xl font-thin uppercase tracking-widest text-white text-opacity-50">
               {data.role}
@@ -48,7 +48,7 @@ const SliderCrew = ({ data, button, onClick }) => {
           </ul>
         </article>
         <img
-          className="h-[300px] w-11/12 object-contain md:w-1/2 lg:h-[700px] lg:w-5/12"
+          className="h-[300px] w-11/12 object-contain md:h-[700px] lg:w-5/12"
           src={data.images.png}
         />
       </div>

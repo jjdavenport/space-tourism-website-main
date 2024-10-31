@@ -6,7 +6,7 @@ const desktopNav = () => {
   const path = location.pathname;
   return (
     <>
-      <nav className="flex w-full items-center justify-between py-8">
+      <nav className="flex w-full items-center justify-between pt-8">
         <img src={logo} className="px-8" />
         <div className="z-10 -mr-10 h-1 w-full border-b-2 border-white border-opacity-20"></div>
         <ul className="flex h-full w-full items-center justify-evenly gap-10 bg-white bg-opacity-[0.01] text-lg uppercase backdrop-blur-xl ~md/xl:~pr-20/36 ~md/xl:~pl-20/32">

@@ -16,7 +16,7 @@ export default {
         },
       },
       animation: {
-        spin: "rotate 500s linear infinite",
+        spinPlanet: "rotate 500s linear infinite",
       },
       fontFamily: {
         barlow: ["barlow condensed", "sans-serif"],

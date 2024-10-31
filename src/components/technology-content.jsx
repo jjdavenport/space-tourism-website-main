@@ -17,7 +17,7 @@ const TechnologyContent = () => {
   return (
     <>
       <main className="flex flex-1 flex-col md:justify-center lg:justify-normal">
-        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest lg:px-28 lg:py-10 lg:text-3xl">
+        <span className="flex gap-4 px-5 py-3 text-2xl font-light uppercase tracking-widest md:px-8 lg:px-28 lg:py-10 lg:text-3xl">
           <span className="font-semibold tracking-widest text-white text-opacity-20">
             03
           </span>
