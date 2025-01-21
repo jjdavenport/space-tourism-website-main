@@ -1,6 +1,6 @@
-import Nav from "./components/nav";
-import Footer from "./components/footer";
-import DestinationContent from "./components/destination-content";
+import Nav from "../../components/shared/nav";
+import Footer from "../../components/shared/footer";
+import DestinationContent from "./destination-content";
 
 const DestinationHomepage = () => {
   return (

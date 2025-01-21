@@ -1,5 +1,5 @@
-import logo from "./assets/shared/logo.svg";
-import menu from "./assets/shared/icon-hamburger.svg";
+import logo from "../../assets/shared/logo.svg";
+import menu from "../../assets/shared/icon-hamburger.svg";
 import MobileMenu from "./mobile-menu";
 import { useState } from "react";
 

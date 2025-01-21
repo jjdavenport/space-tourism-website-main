@@ -1,4 +1,4 @@
-import logo from "./assets/shared/logo.svg";
+import logo from "../../assets/shared/logo.svg";
 import { Link, useLocation } from "react-router-dom";
 
 const TabletNav = () => {

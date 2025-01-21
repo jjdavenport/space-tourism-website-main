@@ -1,6 +1,6 @@
-import Nav from "./components/nav";
-import Footer from "./components/footer";
-import TechnologyContent from "./components/technology-content";
+import Nav from "../../components/shared/nav";
+import Footer from "../../components/shared/footer";
+import TechnologyContent from "./technology-content";
 
 const TechnologyHomepage = ({ desktop }) => {
   return (

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import MediaContext from "../media-context";
+import MediaContext from "../../hooks/media-context";
 
 const SliderCrew = ({ data, button, onClick }) => {
   const desktop = useContext(MediaContext);

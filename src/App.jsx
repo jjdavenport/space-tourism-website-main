@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Technology from "./technology";
-import Crew from "./crew";
-import Destination from "./destination";
-import Homepage from "./homepage";
+import Technology from "./pages/technology/technology";
+import Crew from "./pages/crew/crew";
+import Destination from "./pages/destination/destination";
+import Homepage from "./pages/home/homepage";
 import { useMediaQuery } from "react-responsive";
-import MediaContext from "./media-context";
+import MediaContext from "./hooks/media-context";
 
 function App() {
   const media = useMediaQuery({ minWidth: 1024 });

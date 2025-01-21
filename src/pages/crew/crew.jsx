@@ -1,5 +1,5 @@
-import Nav from "./components/nav";
-import CrewContent from "./components/crew-content";
+import Nav from "../../components/shared/nav";
+import CrewContent from "./crew-content";
 
 const CrewHomepage = () => {
   return (

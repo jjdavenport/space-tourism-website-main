@@ -1,4 +1,4 @@
-import close from "./assets/shared/icon-close.svg";
+import close from "../../assets/shared/icon-close.svg";
 import { Link } from "react-router-dom";
 
 const MobileMenu = ({ toggle, closeMenu }) => {

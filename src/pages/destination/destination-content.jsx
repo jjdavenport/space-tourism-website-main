@@ -1,4 +1,4 @@
-import data from "./assets/data.json";
+import data from "../../assets/shared/data.json";
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 import SliderDestination from "./slider-destination";

@@ -1,5 +1,5 @@
-import data from "./assets/data.json";
-import { useRef, useState, useEffect } from "react";
+import data from "../../assets/shared/data.json";
+import { useRef, useState } from "react";
 import SliderCrew from "./slider-crew";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

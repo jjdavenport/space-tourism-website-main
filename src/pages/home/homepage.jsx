@@ -1,6 +1,6 @@
-import Nav from "./components/nav";
-import HomepageContent from "./components/homepage-content";
-import Footer from "./components/footer";
+import Nav from "../../components/shared/nav";
+import HomepageContent from "./homepage-content";
+import Footer from "../../components/shared/footer";
 
 const Homepage = () => {
   return (
