@@ -1,8 +1,17 @@
+import { Wrapper, Container, MobileNav } from "./components/content";
+import { Outlet } from "react-router";
+
 function App() {
-return (
+  return (
     <>
+      <Wrapper>
+        <MobileNav />
+        <Container>
+          <Outlet />
+        </Container>
+      </Wrapper>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

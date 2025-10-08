@@ -53,7 +53,7 @@ export const DestinationContent = () => {
       <div>
         <span>01 Pick your Destination</span>
         <img src={data.destinations[0].images.webp} alt="moon" />
-        {data.destinations[0].map((i, index) => (
+        {data.destinations.map((i, index) => (
           <span key={index}>{i.name}</span>
         ))}
         <span>{data.destinations[0].name}</span>

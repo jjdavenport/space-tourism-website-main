@@ -1,9 +1,13 @@
-import { HomeContent, MobileNav } from "../components/content";
+import {
+  HomeContent,
+  CrewContent,
+  TechnologyContent,
+  DestinationContent,
+} from "../components/content";
 
 export const HomePage = () => {
   return (
     <>
-      <MobileNav />
       <HomeContent />
     </>
   );
@@ -12,7 +16,7 @@ export const HomePage = () => {
 export const DestinationPage = () => {
   return (
     <>
-      <MobileNav />
+      <DestinationContent />
     </>
   );
 };
@@ -20,7 +24,7 @@ export const DestinationPage = () => {
 export const CrewPage = () => {
   return (
     <>
-      <MobileNav />
+      <CrewContent />
     </>
   );
 };
@@ -28,7 +32,7 @@ export const CrewPage = () => {
 export const TechnologyPage = () => {
   return (
     <>
-      <MobileNav />
+      <TechnologyContent />
     </>
   );
 };
