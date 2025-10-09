@@ -1,7 +1,7 @@
 import logo from "../assets/shared/logo.svg";
 import data from "../assets/shared/data.json";
 import menu from "../assets/shared/icon-hamburger.svg";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 import { useEffect } from "react";
 
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
@@ -32,7 +32,7 @@ export const Wrapper = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className="bg-home-mobile crew:bg-crew-mobile crew:md:bg-crew-tablet crew:lg:bg-crew-desktop md:bg-home-tablet lg:bg-home-desktop technology:bg-technology-mobile technology:md:bg-technology-tablet technology:lg:bg-technology-desktop destinations:bg-destinations-mobile destinations:md:bg-destinations-tablet destinations:lg:bg-destinations-desktop h-screen bg-no-repeat">
+      <div className="bg-home-mobile crew:bg-crew-mobile crew:md:bg-crew-tablet crew:lg:bg-crew-desktop md:bg-home-tablet lg:bg-home-desktop technology:bg-technology-mobile technology:md:bg-technology-tablet technology:lg:bg-technology-desktop destinations:bg-destinations-mobile destinations:md:bg-destinations-tablet destinations:lg:bg-destinations-desktop flex min-h-screen flex-col bg-cover bg-no-repeat">
         {children}
       </div>
     </>
@@ -42,7 +42,7 @@ export const Wrapper = ({ children }: { children: React.ReactNode }) => {
 export const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div>{children}</div>
+      <div className="flex flex-1 flex-col">{children}</div>
     </>
   );
 };
@@ -50,11 +50,15 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
 export const MobileNav = () => {
   return (
     <>
-      <header>
-        <img src={logo} alt="logo" />
-        <button>
-          <img src={menu} alt="menu" />
-        </button>
+      <header className="flex items-center justify-between py-6">
+        <div className="pl-6">
+          <img className="size-10 object-contain" src={logo} alt="logo" />
+        </div>
+        <div className="flex items-center pr-6">
+          <button>
+            <img className="h-[1.3125rem] w-6" src={menu} alt="menu" />
+          </button>
+        </div>
       </header>
     </>
   );
@@ -63,17 +67,29 @@ export const MobileNav = () => {
 export const HomeContent = () => {
   return (
     <>
-      <div>
-        <div>
-          <h1> So, you want to travel to Space</h1>
-          <p>
+      <div className="flex flex-1 flex-col items-center justify-between p-6">
+        <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center">
+          <h2 className="font-barlow-condensed text-light-blue tracking-[0.15rem] uppercase md:text-[1.75rem] md:leading-[32.1%]">
+            So, you want to travel to
+          </h2>
+          <h1 className="font-bellefair text-[5rem] text-white uppercase">
+            Space
+          </h1>
+          <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%]">
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we’ll give you a truly out of this
             world experience!
           </p>
         </div>
-        <button> Explore</button>
+        <div className="flex h-[23.875rem] flex-col items-center justify-center">
+          <Link
+            to="crew"
+            className="font-bellefair text-dark-blue flex size-[9rem] items-center justify-center rounded-full bg-white text-lg uppercase"
+          >
+            Explore
+          </Link>
+        </div>
       </div>
     </>
   );
