@@ -2,7 +2,7 @@ import logo from "../assets/shared/logo.svg";
 import data from "../assets/shared/data.json";
 import menu from "../assets/shared/icon-hamburger.svg";
 import { useLocation, Link } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
@@ -95,7 +95,7 @@ export const HomeContent = () => {
   );
 };
 
-export const DestinationContent = () => {
+export const DestinationsContent = () => {
   return (
     <>
       <div>
@@ -122,17 +122,51 @@ export const DestinationContent = () => {
 };
 
 export const CrewContent = () => {
+  const [state, setState] = useState(0);
   return (
     <>
-      <div>
-        <span>02 Meet your crew</span>
-        <span>{data.crew[0].role}</span>
-        <span>{data.crew[0].name}</span>
-        <p>{data.crew[0].bio}</p>
-        {Array.from({ length: 4 }).map((_, i) => (
-          <button key={i}></button>
-        ))}
-        <img src={data.crew[0].images.webp} alt={data.crew[0].name} />
+      <div className="flex flex-col items-center gap-6 p-6">
+        <div className="flex gap-6">
+          <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25">
+            02
+          </span>
+          <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase">
+            Meet your crew
+          </span>
+        </div>
+        <div className="flex max-w-[20.43rem] flex-col items-center justify-between gap-6">
+          <div className="flex flex-col gap-6 pt-10">
+            <div className="flex flex-col gap-6 text-center">
+              <div className="flex flex-col items-center gap-2">
+                <span className="font-bellefair text-lg text-white/50 uppercase">
+                  {data.crew[0].role}
+                </span>
+                <span className="font-bellefair text-2xl text-white uppercase">
+                  {data.crew[0].name}
+                </span>
+              </div>
+              <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%]">
+                {data.crew[0].bio}
+              </p>
+            </div>
+            <ul className="flex justify-center gap-4">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <li key={i}>
+                  <button
+                    className={`${state === i ? "bg-white" : "bg-white/15"} size-[0.625rem] rounded-full bg-white`}
+                  ></button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative">
+            <img
+              className="w-[16.9375rem]"
+              src={data.crew[0].images.webp}
+              alt={data.crew[0].name}
+            />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import {
   HomePage,
   CrewPage,
   TechnologyPage,
-  DestinationPage,
+  DestinationsPage,
 } from "./page/content";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "destinations",
-        element: <DestinationPage />,
+        element: <DestinationsPage />,
       },
       {
         path: "crew",

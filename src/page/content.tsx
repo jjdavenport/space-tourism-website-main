@@ -2,7 +2,7 @@ import {
   HomeContent,
   CrewContent,
   TechnologyContent,
-  DestinationContent,
+  DestinationsContent,
 } from "../components/content";
 
 export const HomePage = () => {
@@ -13,10 +13,10 @@ export const HomePage = () => {
   );
 };
 
-export const DestinationPage = () => {
+export const DestinationsPage = () => {
   return (
     <>
-      <DestinationContent />
+      <DestinationsContent />
     </>
   );
 };
