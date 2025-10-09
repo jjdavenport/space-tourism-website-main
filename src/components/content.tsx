@@ -1,10 +1,40 @@
 import logo from "../assets/shared/logo.svg";
 import data from "../assets/shared/data.json";
+import menu from "../assets/shared/icon-hamburger.svg";
+import { useLocation } from "react-router";
+import { useEffect } from "react";
 
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const path = location.pathname;
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    root.classList.remove("crew", "technology", "destinations");
+
+    switch (path) {
+      case "/crew":
+        root.classList.add("crew");
+        break;
+      case "/technology":
+        root.classList.add("technology");
+        break;
+      case "/destinations":
+        root.classList.add("destinations");
+        break;
+    }
+
+    return () => {
+      root.classList.remove("crew", "technology", "destinations");
+    };
+  }, [path]);
+
   return (
     <>
-      <div>{children}</div>
+      <div className="bg-home-mobile crew:bg-crew-mobile crew:md:bg-crew-tablet crew:lg:bg-crew-desktop md:bg-home-tablet lg:bg-home-desktop technology:bg-technology-mobile technology:md:bg-technology-tablet technology:lg:bg-technology-desktop destinations:bg-destinations-mobile destinations:md:bg-destinations-tablet destinations:lg:bg-destinations-desktop h-screen bg-no-repeat">
+        {children}
+      </div>
     </>
   );
 };
@@ -22,7 +52,9 @@ export const MobileNav = () => {
     <>
       <header>
         <img src={logo} alt="logo" />
-        <button></button>
+        <button>
+          <img src={menu} alt="menu" />
+        </button>
       </header>
     </>
   );

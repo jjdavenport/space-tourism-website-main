@@ -1,3 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap");
 
 @import "tailwindcss";
+
+@theme {
+  --background-image-home-desktop: url("/src/assets/home/background-home-desktop.jpg");
+  --background-image-home-tablet: url("/src/assets/home/background-home-tablet.jpg");
+  --background-image-home-mobile: url("/src/assets/home/background-home-mobile.jpg");
+  --background-image-destinations-desktop: url("/src/assets/destination/background-destination-desktop.jpg");
+  --background-image-destinations-tablet: url("/src/assets/destination/background-destination-tablet.jpg");
+  --background-image-destinations-mobile: url("/src/assets/destination/background-destination-mobile.jpg");
+  --background-image-crew-desktop: url("/src/assets/crew/background-crew-desktop.jpg");
+  --background-image-crew-tablet: url("/src/assets/crew/background-crew-tablet.jpg");
+  --background-image-crew-mobile: url("/src/assets/crew/background-crew-mobile.jpg");
+  --background-image-technology-desktop: url("/src/assets/technology/background-technology-desktop.jpg");
+  --background-image-technology-tablet: url("/src/assets/technology/background-technology-tablet.jpg");
+  --background-image-technology-mobile: url("/src/assets/technology/background-technology-mobile.jpg");
+}
+
+@custom-variant crew (&:where([class="crew"] *));
+@custom-variant technology (&:where([class="technology"] *));
+@custom-variant destinations (&:where([class="destinations"] *));
