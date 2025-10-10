@@ -229,20 +229,59 @@ export const CrewContent = () => {
 };
 
 export const TechnologyContent = () => {
+  const [state, setState] = useState<number>(0);
+
+  const handleClick = (number: number) => {
+    setState(number);
+  };
+
   return (
     <>
-      <div>
-        <span>03 Space launch 101</span>
-        <img
-          src={data.technology[0].images.portrait}
-          alt={data.technology[0].name}
-        />
-        {Array.from({ length: 3 }).map((_, i) => (
-          <button key={i}>{i + 1}</button>
-        ))}
-        <span>The terminology ...</span>
-        <span>{data.technology[0].name}</span>
-        <p>{data.technology[0].description}</p>
+      <div className="flex flex-col items-center gap-2 p-6">
+        <div className="flex gap-6">
+          <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25">
+            03
+          </span>
+          <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase">
+            Space launch 101
+          </span>
+        </div>
+        <div className="flex flex-col gap-8">
+          <div className="relative flex h-[20.125rem] flex-col gap-2 overflow-hidden pt-[4rem]">
+            <img
+              src={data.technology[0].images.landscape}
+              className="absolute -bottom-10 h-[18.3125rem] w-[768px] object-cover"
+            />
+          </div>
+          <div className="flex flex-col gap-10">
+            <ul className="flex justify-center gap-4">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <li>
+                  <button
+                    className={`${state === i ? "text-dark-blue border-transparent bg-white" : "border-white/25 text-white"} font-bellefair size-10 rounded-full border text-lg`}
+                    onClick={() => handleClick(i)}
+                    key={i}
+                  >
+                    {i + 1}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col items-center gap-4 text-center">
+              <div className="flex flex-col gap-4">
+                <span className="font-bellefair text-lg text-white/50 uppercase">
+                  The terminology ...
+                </span>
+                <span className="font-bellefair text-2xl text-white uppercase">
+                  {data.technology[0].name}
+                </span>
+              </div>
+              <p className="font-barlow text-light-blue h-[8.4375rem] max-w-[20.4375rem] text-[0.9375rem] leading-[180%]">
+                {data.technology[0].description}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
