@@ -173,9 +173,9 @@ export const DestinationsContent = () => {
 
   return (
     <>
-      <div className="flex justify-center p-6">
-        <div className="flex max-w-[20.4375rem] flex-col gap-6">
-          <div className="flex justify-center gap-6">
+      <div className="flex justify-center p-6 md:p-10">
+        <div className="flex max-w-[20.4375rem] flex-col gap-6 md:max-w-screen">
+          <div className="flex justify-center gap-6 md:justify-normal">
             <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25">
               01
             </span>
@@ -184,20 +184,20 @@ export const DestinationsContent = () => {
             </span>
           </div>
           <div className="flex flex-col gap-8">
-            <div className="flex h-[12.6875rem] items-center justify-center">
+            <div className="flex h-[12.6875rem] items-center justify-center md:h-[24rem]">
               <img
-                className="size-36"
+                className="size-36 md:size-[18.75rem]"
                 src={data.destinations[0].images.webp}
                 alt="moon"
               />
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 md:max-w-[32.125rem] md:gap-10">
               <ul className="flex justify-center gap-6">
                 {data.destinations.map((i, index) => (
                   <li>
                     <button
                       onClick={() => handleClick(i.name)}
-                      className={`${state === i.name ? "border-white text-white" : "text-light-blue border-transparent"} font-barlow-condensed border-b-2 pb-[0.6875rem] text-sm text-[0.9375rem] tracking-[0.1313rem] uppercase`}
+                      className={`${state === i.name ? "border-white text-white" : "text-light-blue border-transparent"} font-barlow-condensed border-b-2 pb-[0.6875rem] text-sm text-[0.9375rem] tracking-[0.1313rem] uppercase md:text-base md:tracking-[0.125rem]`}
                       key={index}
                     >
                       {i.name}
@@ -206,15 +206,15 @@ export const DestinationsContent = () => {
                 ))}
               </ul>
               <div className="flex flex-col items-center gap-4 text-center">
-                <span className="font-bellefair text-[3.5rem] text-white uppercase">
+                <span className="font-bellefair text-[3.5rem] text-white uppercase md:text-[5rem]">
                   {data.destinations[0].name}
                 </span>
-                <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%]">
+                <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%] md:h-[5.4375rem] md:text-base">
                   {data.destinations[0].description}
                 </p>
               </div>
               <div className="h-[0.0625rem] w-full bg-white/25"></div>
-              <div className="flex flex-col items-center gap-6 text-center">
+              <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-center">
                 <div className="flex flex-col gap-3">
                   <span className="text-light-blue font-barlow-condensed text-sm tracking-[0.125rem] uppercase">
                     Avg. distance
