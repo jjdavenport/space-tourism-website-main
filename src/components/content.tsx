@@ -4,6 +4,10 @@ import menu from "../assets/shared/icon-hamburger.svg";
 import { useLocation, Link } from "react-router";
 import { useEffect, useState } from "react";
 
+export const Footer = () => {
+  return <footer></footer>;
+};
+
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const path = location.pathname;
@@ -64,28 +68,93 @@ export const MobileNav = () => {
   );
 };
 
+export const TabletNav = () => {
+  const [state, setState] = useState<string>("");
+
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
+
+  useEffect(() => {
+    setState(path);
+  }, [path]);
+
+  return (
+    <>
+      <header className="flex h-[6rem] justify-between gap-16">
+        <div className="flex items-center pl-10">
+          <img className="size-12 object-contain" src={logo} alt="logo" />
+        </div>
+        <nav className="flex w-full gap-12 bg-white/5 px-10">
+          <TabletLink path="" text="Home" state={state} />
+          <TabletLink
+            path="destinations"
+            text="Destination"
+            number="01"
+            state={state}
+          />
+          <TabletLink path="crew" text="Crew" number="02" state={state} />
+          <TabletLink
+            path="technology"
+            text="Technology"
+            number="03"
+            state={state}
+          />
+        </nav>
+      </header>
+    </>
+  );
+};
+
+const TabletLink = ({
+  path,
+  text,
+  number,
+  state,
+}: {
+  path: string;
+  text: string;
+  number?: string;
+  state: string;
+}) => {
+  return (
+    <>
+      <Link
+        className={`${state === path ? "border-b-white" : "border-b-transparent"} flex items-center gap-3 border-b-2`}
+        to={path}
+      >
+        <span className="font-barlow-condensed font-bold tracking-[0.1688rem] text-white uppercase">
+          {number}
+        </span>
+        <span className="font-barlow-condensed tracking-[0.125rem] text-white uppercase">
+          {text}
+        </span>
+      </Link>
+    </>
+  );
+};
+
 export const HomeContent = () => {
   return (
     <>
-      <div className="flex flex-1 flex-col items-center justify-between p-6">
-        <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center">
-          <h2 className="font-barlow-condensed text-light-blue tracking-[0.15rem] uppercase md:text-[1.75rem] md:leading-[32.1%]">
+      <div className="flex flex-1 flex-col items-center justify-between p-6 md:gap-12 md:px-10 md:py-32">
+        <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center md:max-w-xl">
+          <h2 className="font-barlow-condensed text-light-blue tracking-[0.15rem] uppercase md:text-[1.75rem] md:leading-[32.1%] md:tracking-[0.25rem]">
             So, you want to travel to
           </h2>
-          <h1 className="font-bellefair text-[5rem] text-white uppercase">
+          <h1 className="font-bellefair text-[5rem] text-white uppercase md:text-[9rem]">
             Space
           </h1>
-          <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%]">
+          <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%] md:text-base">
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we’ll give you a truly out of this
             world experience!
           </p>
         </div>
-        <div className="flex h-[23.875rem] flex-col items-center justify-center">
+        <div className="flex h-[23.875rem] flex-col items-center justify-center md:h-auto">
           <Link
             to="crew"
-            className="font-bellefair text-dark-blue flex size-[9rem] items-center justify-center rounded-full bg-white text-lg uppercase"
+            className="font-bellefair text-dark-blue flex size-[9rem] items-center justify-center rounded-full bg-white text-lg text-[2rem] uppercase md:size-[17rem]"
           >
             Explore
           </Link>
