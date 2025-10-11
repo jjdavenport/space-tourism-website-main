@@ -176,10 +176,10 @@ export const DestinationsContent = () => {
       <div className="flex justify-center p-6 md:p-10">
         <div className="flex max-w-[20.4375rem] flex-col gap-6 md:max-w-screen">
           <div className="flex justify-center gap-6 md:justify-normal">
-            <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25">
+            <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25 md:text-xl">
               01
             </span>
-            <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase">
+            <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase md:text-xl">
               Pick your Destination
             </span>
           </div>
@@ -249,47 +249,49 @@ export const CrewContent = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-6 p-6">
-        <div className="flex gap-6">
-          <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25">
-            02
-          </span>
-          <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase">
-            Meet your crew
-          </span>
-        </div>
-        <div className="flex max-w-[20.43rem] flex-col items-center justify-between gap-6">
-          <div className="flex flex-col gap-6 pt-10">
-            <div className="flex flex-col gap-6 text-center">
-              <div className="flex flex-col items-center gap-2">
-                <span className="font-bellefair text-lg text-white/50 uppercase">
-                  {data.crew[0].role}
-                </span>
-                <span className="font-bellefair text-2xl text-white uppercase">
-                  {data.crew[0].name}
-                </span>
-              </div>
-              <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%]">
-                {data.crew[0].bio}
-              </p>
-            </div>
-            <ul className="flex justify-center gap-4">
-              {Array.from({ length: 4 }).map((_, i) => (
-                <li key={i}>
-                  <button
-                    onClick={() => handleClick(i)}
-                    className={`${state === i ? "bg-white" : "bg-white/15"} size-[0.625rem] rounded-full bg-white tracking-[0.13125rem]`}
-                  ></button>
-                </li>
-              ))}
-            </ul>
+      <div className="flex flex-col items-center p-6 md:p-10">
+        <div className="flex w-full flex-col items-center gap-6 md:items-start">
+          <div className="flex gap-6">
+            <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25 md:text-xl">
+              02
+            </span>
+            <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase md:text-xl">
+              Meet your crew
+            </span>
           </div>
-          <div className="relative">
-            <img
-              className="w-[16.9375rem]"
-              src={data.crew[0].images.webp}
-              alt={data.crew[0].name}
-            />
+          <div className="flex w-full max-w-[20.43rem] flex-col items-center justify-between gap-6 md:max-w-full md:gap-8">
+            <div className="flex flex-col gap-6 pt-10 md:max-w-[32rem]">
+              <div className="flex flex-col gap-6 text-center">
+                <div className="flex flex-col items-center gap-2 md:p-4">
+                  <span className="font-bellefair text-lg text-white/50 uppercase md:text-2xl">
+                    {data.crew[0].role}
+                  </span>
+                  <span className="font-bellefair text-2xl text-white uppercase md:text-[2.5rem]">
+                    {data.crew[0].name}
+                  </span>
+                </div>
+                <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%] md:h-auto md:text-base">
+                  {data.crew[0].bio}
+                </p>
+              </div>
+              <ul className="flex justify-center gap-4">
+                {Array.from({ length: 4 }).map((_, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={() => handleClick(i)}
+                      className={`${state === i ? "bg-white" : "bg-white/15"} size-[0.625rem] rounded-full bg-white tracking-[0.13125rem]`}
+                    ></button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative">
+              <img
+                className="w-[16.9375rem] md:w-[27.915rem]"
+                src={data.crew[0].images.webp}
+                alt={data.crew[0].name}
+              />
+            </div>
           </div>
         </div>
       </div>
