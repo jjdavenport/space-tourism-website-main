@@ -1,8 +1,9 @@
 import logo from "../assets/shared/logo.svg";
 import data from "../assets/shared/data.json";
 import menu from "../assets/shared/icon-hamburger.svg";
+import cross from "../assets/shared/icon-close.svg";
 import { useLocation, Link } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type SetStateAction } from "react";
 
 export const Footer = () => {
   return (
@@ -30,16 +31,16 @@ export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const root = document.documentElement;
 
-    root.classList.remove("crew", "technology", "destinations");
+    root.classList.remove("crew", "/technology", "destinations");
 
     switch (path) {
-      case "/crew":
+      case "/space-tourism-website-main/crew":
         root.classList.add("crew");
         break;
-      case "/technology":
+      case "/space-tourism-website-main/technology":
         root.classList.add("technology");
         break;
-      case "/destinations":
+      case "/space-tourism-website-main/destinations":
         root.classList.add("destinations");
         break;
     }
@@ -66,7 +67,61 @@ export const Container = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+const MobileMenu = ({
+  setOpen,
+}: {
+  setOpen: React.Dispatch<SetStateAction<boolean>>;
+}) => {
+  return (
+    <>
+      <div className="bg-mobile-menu/15 fixed top-0 right-0 bottom-0 z-50 flex w-[15.875rem] flex-col gap-12 p-6 backdrop-blur-[5rem]">
+        <div className="flex justify-end py-8">
+          <button className="" onClick={() => setOpen(false)}>
+            <img className="w-6 object-contain" src={cross} alt="x" />
+          </button>
+        </div>
+        <nav className="flex w-full flex-col gap-8">
+          <MobileLink path="" text="Home" number="00" />
+          <MobileLink path="destinations" text="Destination" number="01" />
+          <MobileLink path="crew" text="Crew" number="02" />
+          <MobileLink path="technology" text="Technology" number="03" />
+        </nav>
+      </div>
+    </>
+  );
+};
+
+const MobileLink = ({
+  path,
+  text,
+  number,
+}: {
+  path: string;
+  text: string;
+  number: string;
+}) => {
+  return (
+    <>
+      <Link className="flex gap-3" to={path}>
+        <span className="font-barlow-condensed font-bold tracking-[0.1688em] text-white">
+          {number}
+        </span>{" "}
+        <span className="font-barlow-condensed tracking-[0.125em] text-white uppercase">
+          {text}
+        </span>
+      </Link>
+    </>
+  );
+};
+
 export const MobileNav = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
+
   return (
     <>
       <header className="flex items-center justify-between py-6">
@@ -74,11 +129,12 @@ export const MobileNav = () => {
           <img className="size-10 object-contain" src={logo} alt="logo" />
         </div>
         <div className="flex items-center pr-6">
-          <button>
+          <button onClick={() => setOpen(true)}>
             <img className="h-[1.3125rem] w-6" src={menu} alt="menu" />
           </button>
         </div>
       </header>
+      {open && <MobileMenu setOpen={setOpen} />}
     </>
   );
 };
@@ -169,7 +225,7 @@ export const HomeContent = () => {
         <div className="flex h-[23.875rem] flex-col items-center justify-center md:h-auto">
           <Link
             to="crew"
-            className="font-bellefair text-dark-blue flex size-[9rem] items-center justify-center rounded-full bg-white text-lg text-[2rem] uppercase md:size-[17rem]"
+            className="font-bellefair text-dark-blue flex size-[9rem] items-center justify-center rounded-full bg-white text-lg uppercase md:size-[17rem] md:text-[2rem]"
           >
             Explore
           </Link>

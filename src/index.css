@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-mobile-menu: #0b0d17;
   --color-light-blue: hsl(231, 77%, 90%);
   --color-dark-blue: hsl(230, 35%, 7%);
   --font-barlow-condensed: "barlow condensed", "sans-serif";

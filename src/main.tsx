@@ -12,7 +12,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/space-tourism-website-main/",
     element: <App />,
     children: [
       {
