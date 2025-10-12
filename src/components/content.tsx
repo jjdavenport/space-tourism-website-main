@@ -5,7 +5,22 @@ import { useLocation, Link } from "react-router";
 import { useEffect, useState } from "react";
 
 export const Footer = () => {
-  return <footer></footer>;
+  return (
+    <footer className="text-center text-xs text-white">
+      Challenge by
+      <a
+        className="pl-1 underline"
+        href="https://www.frontendmentor.io?ref=challenge"
+      >
+        Frontend Mentor
+      </a>
+      . Coded by
+      <a className="pl-1 underline" href="https://github.com/jjdavenport">
+        jjdavenport
+      </a>
+      .
+    </footer>
+  );
 };
 
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
@@ -138,7 +153,7 @@ export const HomeContent = () => {
     <>
       <div className="flex flex-1 flex-col items-center justify-between p-6 md:gap-12 md:px-10 md:py-32">
         <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center md:max-w-xl">
-          <h2 className="font-barlow-condensed text-light-blue tracking-[0.15rem] uppercase md:text-[1.75rem] md:leading-[32.1%] md:tracking-[0.25rem]">
+          <h2 className="font-barlow-condensed text-light-blue tracking-[0.15em] uppercase md:text-[1.75rem] md:leading-[32.1%] md:tracking-[0.25em]">
             So, you want to travel to
           </h2>
           <h1 className="font-bellefair text-[5rem] text-white uppercase md:text-[9rem]">
@@ -176,10 +191,10 @@ export const DestinationsContent = () => {
       <div className="flex justify-center p-6 md:p-10">
         <div className="flex max-w-[20.4375rem] flex-col gap-6 md:max-w-screen">
           <div className="flex justify-center gap-6 md:justify-normal">
-            <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25 md:text-xl">
+            <span className="font-barlow-condensed font-bold tracking-[0.15em] text-white/25 md:text-xl">
               01
             </span>
-            <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase md:text-xl">
+            <span className="font-barlow-condensed tracking-[0.15em] text-white uppercase md:text-xl">
               Pick your Destination
             </span>
           </div>
@@ -252,10 +267,10 @@ export const CrewContent = () => {
       <div className="flex flex-col items-center p-6 md:p-10">
         <div className="flex w-full flex-col items-center gap-6 md:items-start">
           <div className="flex gap-6">
-            <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25 md:text-xl">
+            <span className="font-barlow-condensed font-bold tracking-[0.15em] text-white/25 md:text-xl">
               02
             </span>
-            <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase md:text-xl">
+            <span className="font-barlow-condensed tracking-[0.15em] text-white uppercase md:text-xl">
               Meet your crew
             </span>
           </div>
@@ -308,28 +323,28 @@ export const TechnologyContent = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-2 p-6">
-        <div className="flex gap-6">
-          <span className="font-barlow-condensed font-bold tracking-[0.15rem] text-white/25">
+      <div className="flex flex-col items-center gap-2 p-6 md:items-start md:p-10">
+        <div className="flex items-center gap-6">
+          <span className="font-barlow-condensed font-bold tracking-[0.15em] text-white/25 md:text-[1.25rem]">
             03
           </span>
-          <span className="font-barlow-condensed tracking-[0.15rem] text-white uppercase">
+          <span className="font-barlow-condensed tracking-[0.15em] text-white uppercase md:text-[1.25rem]">
             Space launch 101
           </span>
         </div>
-        <div className="flex flex-col gap-8">
-          <div className="relative flex h-[20.125rem] flex-col gap-2 overflow-hidden pt-[4rem]">
+        <div className="flex flex-col gap-8 md:w-full md:items-center">
+          <div className="relative flex h-[20.125rem] flex-col gap-2 overflow-hidden pt-[4rem] md:static md:w-full">
             <img
               src={data.technology[0].images.landscape}
-              className="absolute -bottom-10 h-[18.3125rem] w-[768px] object-cover"
+              className="absolute -bottom-10 h-[18.3125rem] w-[768px] object-cover md:static md:h-[22.3125rem]"
             />
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 md:w-full md:items-center">
             <ul className="flex justify-center gap-4">
               {Array.from({ length: 3 }).map((_, i) => (
                 <li>
                   <button
-                    className={`${state === i ? "text-dark-blue border-transparent bg-white" : "border-white/25 text-white"} font-bellefair size-10 rounded-full border text-lg`}
+                    className={`${state === i ? "text-dark-blue border-transparent bg-white" : "border-white/25 text-white"} font-bellefair size-10 rounded-full border text-lg md:size-14 md:text-2xl`}
                     onClick={() => handleClick(i)}
                     key={i}
                   >
@@ -338,16 +353,16 @@ export const TechnologyContent = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col items-center gap-4 text-center">
+            <div className="flex flex-col items-center gap-4 text-center md:w-full md:max-w-[32rem]">
               <div className="flex flex-col gap-4">
                 <span className="font-bellefair text-lg text-white/50 uppercase">
                   The terminology ...
                 </span>
-                <span className="font-bellefair text-2xl text-white uppercase">
+                <span className="font-bellefair text-2xl text-white uppercase md:text-[2.5rem]">
                   {data.technology[0].name}
                 </span>
               </div>
-              <p className="font-barlow text-light-blue h-[8.4375rem] max-w-[20.4375rem] text-[0.9375rem] leading-[180%]">
+              <p className="font-barlow text-light-blue h-[8.4375rem] max-w-[20.4375rem] text-[0.9375rem] leading-[180%] md:max-w-full md:text-base">
                 {data.technology[0].description}
               </p>
             </div>
