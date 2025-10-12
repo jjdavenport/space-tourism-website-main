@@ -72,6 +72,16 @@ const MobileMenu = ({
 }: {
   setOpen: React.Dispatch<SetStateAction<boolean>>;
 }) => {
+  const [state, setState] = useState<string>("");
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  useEffect(() => {
+    console.log(path);
+    setState(path);
+  }, [path]);
+
   return (
     <>
       <div className="bg-mobile-menu/15 fixed top-0 right-0 bottom-0 z-50 flex w-[15.875rem] flex-col gap-12 p-6 backdrop-blur-[5rem]">
@@ -81,10 +91,30 @@ const MobileMenu = ({
           </button>
         </div>
         <nav className="flex w-full flex-col gap-8">
-          <MobileLink path="" text="Home" number="00" />
-          <MobileLink path="destinations" text="Destination" number="01" />
-          <MobileLink path="crew" text="Crew" number="02" />
-          <MobileLink path="technology" text="Technology" number="03" />
+          <MobileLink
+            path="/space-tourism-website-main/"
+            text="Home"
+            number="00"
+            state={state}
+          />
+          <MobileLink
+            path="/space-tourism-website-main/destinations/"
+            text="Destination"
+            number="01"
+            state={state}
+          />
+          <MobileLink
+            path="/space-tourism-website-main/crew/"
+            text="Crew"
+            number="02"
+            state={state}
+          />
+          <MobileLink
+            path="/space-tourism-website-main/technology/"
+            text="Technology"
+            number="03"
+            state={state}
+          />
         </nav>
       </div>
     </>
@@ -95,17 +125,22 @@ const MobileLink = ({
   path,
   text,
   number,
+  state,
 }: {
   path: string;
   text: string;
   number: string;
+  state: string;
 }) => {
   return (
     <>
-      <Link className="flex gap-3" to={path}>
+      <Link
+        className={`${state === path ? "border-r-white" : "border-r-transparent"} mr-[-1.5rem] flex gap-3 border-r-2`}
+        to={path}
+      >
         <span className="font-barlow-condensed font-bold tracking-[0.1688em] text-white">
           {number}
-        </span>{" "}
+        </span>
         <span className="font-barlow-condensed tracking-[0.125em] text-white uppercase">
           {text}
         </span>
@@ -143,7 +178,7 @@ export const TabletNav = () => {
   const [state, setState] = useState<string>("");
 
   const location = useLocation();
-  const path = location.pathname.split("/")[1];
+  const path = location.pathname;
 
   useEffect(() => {
     setState(path);
@@ -156,16 +191,25 @@ export const TabletNav = () => {
           <img className="size-12 object-contain" src={logo} alt="logo" />
         </div>
         <nav className="flex w-full gap-12 bg-white/5 px-10">
-          <TabletLink path="" text="Home" state={state} />
           <TabletLink
-            path="destinations"
+            path="/space-tourism-website-main/"
+            text="Home"
+            state={state}
+          />
+          <TabletLink
+            path="/space-tourism-website-main/destinations/"
             text="Destination"
             number="01"
             state={state}
           />
-          <TabletLink path="crew" text="Crew" number="02" state={state} />
           <TabletLink
-            path="technology"
+            path="/space-tourism-website-main/crew/"
+            text="Crew"
+            number="02"
+            state={state}
+          />
+          <TabletLink
+            path="/space-tourism-website-main/technology/"
             text="Technology"
             number="03"
             state={state}
@@ -265,7 +309,7 @@ export const DestinationsContent = () => {
             <div className="flex flex-col gap-6 md:max-w-[32.125rem] md:gap-10">
               <ul className="flex justify-center gap-6">
                 {data.destinations.map((i, index) => (
-                  <li>
+                  <li key={index}>
                     <button
                       onClick={() => handleClick(i.name)}
                       className={`${state === i.name ? "border-white text-white" : "text-light-blue border-transparent"} font-barlow-condensed border-b-2 pb-[0.6875rem] text-sm text-[0.9375rem] tracking-[0.1313rem] uppercase md:text-base md:tracking-[0.125rem]`}
@@ -398,7 +442,7 @@ export const TechnologyContent = () => {
           <div className="flex flex-col gap-10 md:w-full md:items-center">
             <ul className="flex justify-center gap-4">
               {Array.from({ length: 3 }).map((_, i) => (
-                <li>
+                <li key={i}>
                   <button
                     className={`${state === i ? "text-dark-blue border-transparent bg-white" : "border-white/25 text-white"} font-bellefair size-10 rounded-full border text-lg md:size-14 md:text-2xl`}
                     onClick={() => handleClick(i)}
