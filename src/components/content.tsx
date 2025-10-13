@@ -174,20 +174,34 @@ export const MobileNav = () => {
   );
 };
 
-export const DesktopNav = () => {
+export const DesktopNav = ({ desktop }: { desktop: boolean }) => {
   return (
     <>
-      <header>
-        <div>
-          <img src="" alt="logo" />
+      <header className="flex h-[8.5rem] items-center justify-between pt-10">
+        <div className="flex h-[3rem] w-full items-center gap-16 pl-16 lg:max-w-[46rem]">
+          <img className="size-12 object-contain" src={logo} alt="logo" />
+          <div className="z-10 -mr-6 h-[0.065rem] w-full bg-white/25"></div>
         </div>
-        <nav></nav>
+        <Nav desktop={desktop} />
       </header>
     </>
   );
 };
 
 export const TabletNav = () => {
+  return (
+    <>
+      <header className="flex h-[6rem] justify-between gap-16">
+        <div className="flex items-center pl-10">
+          <img className="size-12 object-contain" src={logo} alt="logo" />
+        </div>
+        <Nav />
+      </header>
+    </>
+  );
+};
+
+const Nav = ({ desktop }: { desktop?: boolean }) => {
   const [state, setState] = useState<string>("");
 
   const location = useLocation();
@@ -199,36 +213,32 @@ export const TabletNav = () => {
 
   return (
     <>
-      <header className="flex h-[6rem] justify-between gap-16">
-        <div className="flex items-center pl-10">
-          <img className="size-12 object-contain" src={logo} alt="logo" />
-        </div>
-        <nav className="flex w-full gap-12 bg-white/5 px-10 backdrop-blur-[5rem]">
-          <TabletLink
-            path="/space-tourism-website-main"
-            text="Home"
-            state={state}
-          />
-          <TabletLink
-            path="/space-tourism-website-main/destinations"
-            text="Destination"
-            number="01"
-            state={state}
-          />
-          <TabletLink
-            path="/space-tourism-website-main/crew"
-            text="Crew"
-            number="02"
-            state={state}
-          />
-          <TabletLink
-            path="/space-tourism-website-main/technology"
-            text="Technology"
-            number="03"
-            state={state}
-          />
-        </nav>
-      </header>
+      <nav className="flex h-full justify-end gap-12 bg-white/5 px-10 backdrop-blur-[5rem] lg:w-full lg:px-16">
+        <TabletLink
+          path="/space-tourism-website-main"
+          text="Home"
+          number={desktop && "00"}
+          state={state}
+        />
+        <TabletLink
+          path="/space-tourism-website-main/destinations"
+          text="Destination"
+          number="01"
+          state={state}
+        />
+        <TabletLink
+          path="/space-tourism-website-main/crew"
+          text="Crew"
+          number="02"
+          state={state}
+        />
+        <TabletLink
+          path="/space-tourism-website-main/technology"
+          text="Technology"
+          number="03"
+          state={state}
+        />
+      </nav>
     </>
   );
 };
@@ -265,8 +275,8 @@ export const HomeContent = () => {
   return (
     <>
       <div className="flex flex-1 flex-col items-center justify-between p-6 md:gap-12 md:px-10 md:py-32 lg:p-32">
-        <div className="flex flex-1 flex-col justify-between lg:flex-row lg:items-end">
-          <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center md:max-w-xl lg:max-w-[33.75rem] lg:items-start lg:text-left">
+        <div className="flex flex-1 flex-col justify-between lg:h-[69.375rem] lg:flex-row lg:items-end">
+          <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center md:max-w-xl lg:h-[21.4375rem] lg:max-w-[33.75rem] lg:items-start lg:text-left">
             <h2 className="font-barlow-condensed text-light-blue tracking-[0.15em] uppercase md:text-[1.75rem] md:leading-[32.1%] md:tracking-[0.25em]">
               So, you want to travel to
             </h2>
@@ -280,7 +290,7 @@ export const HomeContent = () => {
               this world experience!
             </p>
           </div>
-          <div className="flex h-[23.875rem] flex-col items-center justify-center md:h-auto lg:w-[33.75rem] lg:items-end">
+          <div className="flex h-[23.875rem] flex-col items-center justify-center md:h-auto lg:h-[21.4375rem] lg:w-[33.75rem] lg:items-end">
             <Link
               to="destinations"
               className="font-bellefair text-dark-blue flex size-[9rem] items-center justify-center rounded-full bg-white text-lg uppercase md:size-[17rem] md:text-[2rem]"
