@@ -178,9 +178,9 @@ export const DesktopNav = ({ desktop }: { desktop: boolean }) => {
   return (
     <>
       <header className="flex h-[8.5rem] items-center justify-between pt-10">
-        <div className="flex h-[3rem] w-full items-center gap-16 pl-16 lg:max-w-[46rem]">
+        <div className="-mr-8 flex h-[3rem] w-full items-center gap-16 pl-16">
           <img className="size-12 object-contain" src={logo} alt="logo" />
-          <div className="z-10 -mr-6 h-[0.065rem] w-full bg-white/25"></div>
+          <div className="z-10 h-[0.0625rem] w-full bg-white/25"></div>
         </div>
         <Nav desktop={desktop} />
       </header>
@@ -213,31 +213,33 @@ const Nav = ({ desktop }: { desktop?: boolean }) => {
 
   return (
     <>
-      <nav className="flex h-full justify-end gap-12 bg-white/5 px-10 backdrop-blur-[5rem] lg:w-full lg:px-16">
-        <TabletLink
-          path="/space-tourism-website-main"
-          text="Home"
-          number={desktop && "00"}
-          state={state}
-        />
-        <TabletLink
-          path="/space-tourism-website-main/destinations"
-          text="Destination"
-          number="01"
-          state={state}
-        />
-        <TabletLink
-          path="/space-tourism-website-main/crew"
-          text="Crew"
-          number="02"
-          state={state}
-        />
-        <TabletLink
-          path="/space-tourism-website-main/technology"
-          text="Technology"
-          number="03"
-          state={state}
-        />
+      <nav className="flex h-full backdrop-blur-[5rem] lg:w-full lg:max-w-[46rem]">
+        <div className="flex justify-end gap-12 bg-white/5 px-10 lg:w-full lg:justify-items-start lg:px-16">
+          <TabletLink
+            path="/space-tourism-website-main"
+            text="Home"
+            number={desktop ? "00" : undefined}
+            state={state}
+          />
+          <TabletLink
+            path="/space-tourism-website-main/destinations"
+            text="Destination"
+            number="01"
+            state={state}
+          />
+          <TabletLink
+            path="/space-tourism-website-main/crew"
+            text="Crew"
+            number="02"
+            state={state}
+          />
+          <TabletLink
+            path="/space-tourism-website-main/technology"
+            text="Technology"
+            number="03"
+            state={state}
+          />
+        </div>
       </nav>
     </>
   );
@@ -274,16 +276,16 @@ const TabletLink = ({
 export const HomeContent = () => {
   return (
     <>
-      <div className="flex flex-1 flex-col items-center justify-between p-6 md:gap-12 md:px-10 md:py-32 lg:p-32">
-        <div className="flex flex-1 flex-col justify-between lg:h-[69.375rem] lg:flex-row lg:items-end">
-          <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center md:max-w-xl lg:h-[21.4375rem] lg:max-w-[33.75rem] lg:items-start lg:text-left">
-            <h2 className="font-barlow-condensed text-light-blue tracking-[0.15em] uppercase md:text-[1.75rem] md:leading-[32.1%] md:tracking-[0.25em]">
+      <div className="flex flex-1 flex-col items-center justify-between p-6 md:gap-12 md:px-10 md:py-32 lg:px-4 lg:py-32 xl:px-0">
+        <div className="flex flex-1 flex-col justify-between lg:w-full lg:max-w-[69.375rem] lg:flex-row lg:items-end">
+          <div className="flex max-w-[20.4375rem] flex-col items-center gap-6 text-center md:max-w-xl lg:h-auto lg:max-w-[33.75rem] lg:items-start lg:justify-between lg:text-left">
+            <h2 className="font-barlow-condensed text-light-blue tracking-[0.15em] uppercase md:text-[1.75rem] md:leading-[32.1%] md:tracking-[0.25rem] lg:leading-[2.125rem]">
               So, you want to travel to
             </h2>
-            <h1 className="font-bellefair text-[5rem] text-white uppercase md:text-[9rem]">
+            <h1 className="font-bellefair text-[5rem] leading-[10.3125rem] text-white uppercase md:text-[9rem]">
               Space
             </h1>
-            <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%] md:text-base lg:h-[6rem] lg:text-lg">
+            <p className="font-barlow text-light-blue h-[8.4375rem] text-[0.9375rem] leading-[180%] md:text-base lg:h-auto lg:text-lg">
               Let’s face it; if you want to go to space, you might as well
               genuinely go to outer space and not hover kind of on the edge of
               it. Well sit back, and relax because we’ll give you a truly out of
