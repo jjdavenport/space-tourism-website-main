@@ -460,11 +460,13 @@ export const TechnologyContent = () => {
           </span>
         </div>
         <div className="flex flex-col gap-8 md:w-full md:items-center">
-          <div className="relative flex h-[20.125rem] flex-col gap-2 overflow-hidden pt-[4rem] md:static md:w-full">
-            <img
-              src={data.technology[0].images.landscape}
-              className="absolute -bottom-10 h-[18.3125rem] w-[768px] object-cover md:static md:h-[22.3125rem]"
-            />
+          <div className="flex h-[20.125rem] min-w-screen flex-col gap-2 overflow-visible pt-[4rem] md:h-auto">
+            <div className="md:flex md:h-[357px] md:justify-center">
+              <img
+                src={data.technology[0].images.landscape}
+                className="h-[258px] w-[768px] object-cover md:h-full md:w-full"
+              />
+            </div>
           </div>
           <div className="flex flex-col gap-10 md:w-full md:items-center">
             <ul className="flex justify-center gap-4">
